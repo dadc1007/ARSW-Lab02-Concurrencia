@@ -10,6 +10,15 @@ public class RegistroLlegada {
 		return ganador;
 	}
 
+	public synchronized int asignarPosicion(String nombreGalgo) {
+		int posicion = ultimaPosicionAlcanzada;
+		if (posicion == 1) {
+			ganador = nombreGalgo;
+		}
+		ultimaPosicionAlcanzada++;
+		return posicion;
+	}
+
 	public void setGanador(String ganador) {
 		this.ganador = ganador;
 	}
@@ -21,7 +30,5 @@ public class RegistroLlegada {
 	public void setUltimaPosicionAlcanzada(int ultimaPosicionAlcanzada) {
 		this.ultimaPosicionAlcanzada = ultimaPosicionAlcanzada;
 	}
-
-	
 	
 }
